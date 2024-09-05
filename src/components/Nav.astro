@@ -1,0 +1,177 @@
+---
+import "../styles/global.css";
+---
+<body>
+    <header class="header">
+        <nav>
+          <div class="logo">
+            <a href="index.html">AskExperts</a>
+          </div>
+          <input type="checkbox" id="menu-toggle">
+          <label for="menu-toggle" class="menu-icon">&#9776;</label>
+          <ul class="menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Case Study</a></li>
+            <li><a href="#">Team</a></li>
+            <li><a href="#">About</a></li>
+          </ul>
+          <div class="knap">
+            <button popovertarget="popup">Login</button>
+          </div>
+        </nav>
+      </header>
+
+    <div popover id="popup">
+        <h2>I'm a popup</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+      </div>
+
+</body>
+
+
+<style>
+  
+[popover] {
+  opacity: 0;
+  translate: 0 -100%;
+}
+:popover-open {
+  @starting-style {
+  opacity: 0;
+  translate: 0 100%;
+}
+  opacity: 1;
+  translate: 0 0;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  box-shadow: 0 4px 20px hsla(207, 24%, 35%, 0.1);
+  background: var(--color-header);
+backdrop-filter: blur(10.5px);
+  z-index: 1;
+}
+
+nav {
+  display: flex;
+  padding: 20px 30px;
+justify-content: center;
+align-items: flex-start;
+flex-shrink: 0;
+  
+}
+
+.logo a {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+ padding-right: 200px;
+}
+button {
+margin-left: 200px;
+border-radius: 20px;
+background: #FFCC4A;
+text-decoration: none;
+border: none;
+padding: 4px 16px;
+
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu a {
+  display: block;
+  padding: 7px 15px;
+  font-size: 17px;
+  font-weight: 500;
+  transition: 0.2s all ease-in-out;
+  color: #fff;
+}
+
+.menu:hover a {
+  opacity: 0.4;
+}
+
+.menu a:hover {
+  opacity: 1;
+  color: #fff;
+}
+
+.menu-icon {
+  display: none;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+#menu-toggle:checked ~ .menu {
+  transform: scale(1, 1);
+}
+
+@media only screen and (max-width: 950px) {
+  .menu {
+    flex-direction: column;
+    background-color: var(--color-header);
+    align-items: start;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  }
+  nav {
+  display: flex;
+  grid-template-columns: 
+  
+}
+  .menu a {
+    margin-left: 12px;
+  }
+
+  .menu li {
+    margin-bottom: 10px;
+  }
+
+  .menu-icon {
+    display: block;
+    color: #fff;
+    font-size: 28px;
+    cursor: pointer;
+  }
+  #menu-toggle:checked + .menu-icon + .menu {
+    display: flex; /* Viser menuen, når burger-menuen er aktiveret */
+  }
+
+  .knap {
+    order: -1; 
+}
+
+.menu-icon {
+  order: 1; /* Flytter burger-menuen efter knappen */
+}
+
+}
+
+
+
+
+
+</style>
