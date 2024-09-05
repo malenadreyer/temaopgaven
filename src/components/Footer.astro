@@ -1,0 +1,36 @@
+---
+import "../styles/global.css";
+---
+<footer>
+    <div class="footer">
+        <div>
+            <h3>AskExperts</h3>
+        </div>
+        <div>
+            <p>©2022 Consultalk. All rights reserved | Terms of Service | Privacy Policy</p>
+        </div>
+    </div>
+</footer>
+
+
+
+<style>
+    @layer components {
+.footer {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    background-color: var(--color-black);
+    justify-content: center;
+    text-align: center;
+
+    :first-child::after {
+        content: "";
+        display: block;
+        width: 75.001rem;
+        height: 10px;
+        color: white 1px solid;
+    }
+}
+    }
+</style>
+
