@@ -71,6 +71,10 @@ import "../styles/global.css";
     rotate: -45deg;
     transform-origin: right top;
   }
+
+  @media (width < 700px ) {
+    block-size: 250px;
+  }
 }
 .tekst1 {
     display: grid;
@@ -84,7 +88,18 @@ import "../styles/global.css";
     grid-template-rows: 1fr 1fr ;
     align-items: center;
     justify-items: center;
+    
+   
 }
+
+@media (width < 700px) {
+        .tekst {
+        display: grid;
+        grid-template-columns: 1fr;
+        text-align: center;
+        
+        }
+    }
 .seach {
     display: grid;
     grid-template-columns: auto auto;
