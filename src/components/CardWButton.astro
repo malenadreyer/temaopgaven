@@ -1,0 +1,29 @@
+---
+import "../styles/global.css";
+const {overskrift, underskrift, knap} = Astro.props
+---
+
+<div>
+    <h3>{overskrift}</h3>
+    <p>{underskrift}</p>
+    <button>{knap}</button>
+</div>
+
+<style>
+    @layer components {
+       div {
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.20);
+        background: rgba(38, 38, 38, 0.90);
+        backdrop-filter: blur(16px);
+padding: 46px;
+display: grid;
+justify-content: center;
+align-items: center;
+gap: 10px;
+       } 
+
+    }
+    
+    
+    </style>

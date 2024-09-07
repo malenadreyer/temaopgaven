@@ -1,0 +1,96 @@
+---
+import "../styles/global.css";
+import CardWButton from "./CardWButton.astro";
+---
+<section>
+    <div class="tekst">
+        <div class="inside">
+                <h1>Adam Buschemia Business Consultant</h1>
+                <p> Get help from Alex Moore, a professional business coach with advanced experience on growth and business scaling.</p>
+                <button>Book a Meeting</button>
+        </div>
+    <div><img src="../assets/images/photo.png" alt="">
+    </div>
+</div>
+    <div class="card">
+            <CardWButton overskrift="Finance & Restructuring" underskrift="Get help from Alex Moore, a professional business coach with advanced experience on growth and business scaling." knap="Our Services" />
+            <CardWButton overskrift="Our Approach" underskrift="Get help from Alex Moore, a professional business coach with advanced experience on growth and business scaling." knap="More About "/>
+            <CardWButton overskrift="Consultalk Result" underskrift="Get help from Alex Moore, a professional business coach with advanced experience on growth and business scaling." knap="Explore Our Solution"/>
+    </div>
+</section>
+
+<style>
+@layer components {
+
+    section {
+        display: grid;
+        grid-template-columns: auto;
+    grid-template-rows: 1fr 1fr 1fr ;
+    gap: 0 4em;
+    
+    justify-content: center;
+    
+    
+    }
+    .tekst {
+        display: grid;
+        max-height: 615.626px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        align-items: center;
+        justify-content: center;
+        grid-row: 1/4;
+        background-color: var(--color-black);
+        grid-column: 1;
+        
+
+    }
+    .inside  {
+        max-width: 500px;
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+    } 
+.card {
+    grid-column: 1;
+    grid-row: 3/5;
+}
+.header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+background-color:var(--color-black) ;
+
+    &::before {
+    --square-count: 12;
+    --square-size: 1rem;
+    
+    --_square-size: var(--square-size, 1rem);
+    --_square-half: calc(var(--square-size) / 2);
+    --_square-sum: calc(var(--square-count) * var(--square-size));
+    z-index: 1;
+    content: '';
+    position: absolute;
+    left: -100px;
+    top: 450px;
+    transform-origin: 0 0;
+    inline-size: calc( round( var(--_square-sum), var(--_square-size) ) - var(--_square-half) );
+    aspect-ratio: .7;
+    background: linear-gradient(135deg, #BE965D, #976F40, #C99B61, #F0BE7B , #FFCB85, #EEBC79, #C0935B, #976F40) 0 0 / 100% 100%;
+    mask:
+      var(--square-pattern) 0 0 / var(--_square-size) var(--_square-size),
+      var(--square-pattern) var(--_square-half) var(--_square-half) / var(--_square-size) var(--_square-size);
+      rotate: -90deg;
+        } 
+
+    }
+.card {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    inline-size: 1229px;
+    gap: 20px;
+}
+}
+
+
+</style>

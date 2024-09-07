@@ -2,9 +2,9 @@
 const {title =""} = Astro.props;
 import "../styles/global.css";
 import Nav from "../components/Nav.astro";
+import Header from "../components/Header.astro"
 import Footer from "../components/Footer.astro";
 import Newsletter from "../components/Newsletter.astro";
-import Employee from "../components/Employee.astro";
 ---
 
 
@@ -22,7 +22,7 @@ import Employee from "../components/Employee.astro";
 		
         <header><Nav/></header>
 		<main>
-            <Employee/>
+            <Header/>
             <slot/>
 			<Newsletter/>
         </main>
