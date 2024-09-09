@@ -2,30 +2,127 @@
 import "../styles/global.css";
 ---
 
-<section id="overordnet">
-    <div class="grid1">
-        <img src="../assets/ images/billede2.png" alt="">
+<section>
+        <div class="grid1">
+        <img src="../assets/images/billede2.png" alt="">
     </div>
     <div class="grid2">
-        <div>
-            <h5></h5>
+        <div class="h5">
+            <h5>WE'LL WORK WITH YOU</h5>
         </div>
         <div>
-            <h2></h2>
+            <h2>What To Expect</h2>
         </div>
         <div>
-            <p></p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         </div>
-        <div>
-            <div><img src="../assets/tick.svg" alt="">
-            <p></p></div>
-            <div><img src="../assets/tick.svg" alt="">
-                <p></p></div>
-        </div>
-    </div>
-    
+        <ul class="checkmark">
+            <li class="checkmark2">
+                <img src="../assets/tick.svg" alt="tick">
+            Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day.
+            <li class="checkmark2">
+                <img src="../assets/tick.svg" alt="tick">Capitalize on low hanging fruit to identify a ballpark value added activity to beta test override the digital.
+            </ul>
+</div>
 </section>
 
 <style>
+
+@layer components {
+    h2, h5 {
+        color: var(--color-black);
+    }
+p {
+    color: var(--color-brown);
+}
+section {
+    margin: 0 auto;
+    inline-size: min(950px, 100%);
+    display: grid;
+    margin-bottom: 100px;
+    margin-top: 100px;
+    grid-template-columns: 1fr 1fr;
+
+    
+}
+.grid1 {
+        grid-template-rows: subgrid;
+        grid-rows: 3/5;
+        margin-inline: auto;
+        max-width: 400px;
+        max-width: 100%;
+        margin: 3rem;
+        display: grid;
+        position: relative;
+
+            &::before {
+    content: '';
+    position: absolute;
+    left: -1rem;
+    top: -1rem;
+    border-radius: 20px;
+    background: green;
+    width: 150px;
+    height: 100px;
+    z-index: -1;
+  }
+        &::after {
+    --square-count: 12;
+    --square-size: 1rem;
+    
+    --_square-size: var(--square-size, 1rem);
+    --_square-half: calc(var(--square-size) / 2);
+    --_square-sum: calc(var(--square-count) * var(--square-size));
+    z-index: -2;
+    content: '';
+    position: absolute;
+    left: -3rem;
+    top: 9rem;
+    transform-origin: 0 0;
+    inline-size: calc( round( var(--_square-sum), var(--_square-size) ) - var(--_square-half) );
+    aspect-ratio: .7;
+    background: linear-gradient(135deg, #BE965D, #976F40, #C99B61, #F0BE7B , #FFCB85, #EEBC79, #C0935B, #976F40) 0 0 / 100% 100%;
+    mask:
+      var(--square-pattern) 0 0 / var(--_square-size) var(--_square-size),
+      var(--square-pattern) var(--_square-half) var(--_square-half) / var(--_square-size) var(--_square-size);
+    /*clip-path: polygon(-3% 0%, 100% 0%, 100% 103%);*/
+    rotate: -90deg;
+  }
+
+  img {
+    border-radius: 20px;
+    width: 100%;
+height: auto;
+    
+  }
+        }
+
+.h5 {
+    background-color: var(--color-gul);
+    border-radius: 20px;
+    padding: 0px 12px;
+    width: fit-content;
+}
+.checkmark {
+    display: grid;
+  
+  display: flex;
+  flex-flow: column;
+  gap: 1rem;
+
+}
+li {
+  position: relative;
+  display: grid;
+  grid: auto / repeat(2, auto);
+  
+  display: inline-flex;
+  justify-content: start;
+  grid-gap: 10px;
+  color: var(--color-brown);
+}
+
+
+}
 
 </style>
