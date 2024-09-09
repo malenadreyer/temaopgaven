@@ -13,7 +13,7 @@
     --color-header:rgba(27, 27, 27, 0.91);
 
     --fluid-h2: clamp(0.9375rem, 0.394rem + 2.7174vw, 2.5rem);
-
+    --fluid-h5: clamp(0.625rem, 0.4076rem + 1.087vw, 1.25rem);
 
 }
 * {
@@ -42,6 +42,10 @@ h3 {
 }
 p {
     color: var(--color-white);
+}
+h5 {
+  font-size: var(--fluid-h5);
+    color: white;
 }
 
 }

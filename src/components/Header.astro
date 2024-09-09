@@ -7,9 +7,9 @@ import CardWButton from "./CardWButton.astro";
         <div class="inside">
                 <h1>Adam Buschemia Business Consultant</h1>
                 <p> Get help from Alex Moore, a professional business coach with advanced experience on growth and business scaling.</p>
-                <button>Book a Meeting</button>
+                <button class="knappen">Book a Meeting</button>
         </div>
-    <div><img src="../assets/images/photo.png" alt="">
+    <div><img src="../assets/photo.png" alt="">
     </div>
 </div>
     <div class="card">
@@ -21,7 +21,15 @@ import CardWButton from "./CardWButton.astro";
 
 <style>
 @layer components {
+.knappen {
+    border-radius: 3rem;
+    background-color: white;
+    padding: 16px 31px; 
+    width: auto;
+    align-self: flex-start;
+    justify-content: flex-start;
 
+}
     section {
         display: grid;
         grid-template-columns: auto;

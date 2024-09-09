@@ -4,7 +4,7 @@ const {overskrift, underskrift, knap} = Astro.props
 ---
 
 <div>
-    <h3>{overskrift}</h3>
+    <h5>{overskrift}</h5>
     <p>{underskrift}</p>
     <button>{knap}</button>
 </div>
@@ -16,7 +16,9 @@ const {overskrift, underskrift, knap} = Astro.props
         border: 1px solid rgba(255, 255, 255, 0.20);
         background: rgba(38, 38, 38, 0.90);
         backdrop-filter: blur(16px);
-padding: 46px;
+height: auto;
+width: auto;
+padding: 40px;
 display: grid;
 justify-content: center;
 align-items: center;
@@ -24,6 +26,16 @@ gap: 10px;
        } 
 
     }
-    
+    button {
+        display: flex;
+        justify-self: flex-start;
+        padding: 16px 31px;
+        align-self: flex-start;
+        border-radius: 55px;
+background: #151515;
+align-items: center;
+gap: 10px;
+color: white;
+    }
     
     </style>
