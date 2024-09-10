@@ -9,7 +9,7 @@ import CardWButton from "./CardWButton.astro";
                 <p> Get help from Alex Moore, a professional business coach with advanced experience on growth and business scaling.</p>
                 <button class="knappen">Book a Meeting</button>
         </div>
-    <div><img src="../assets/photo.png" alt="">
+    <div><img src="/assets/photo.png" alt="">
     </div>
 </div>
     <div class="card">
@@ -21,46 +21,56 @@ import CardWButton from "./CardWButton.astro";
 
 <style>
 @layer components {
+
+
 .knappen {
     border-radius: 3rem;
     background-color: white;
     padding: 16px 31px; 
-    width: auto;
-    align-self: flex-start;
-    justify-content: flex-start;
+    align-self: start;
+    justify-content: start;
 
 }
-    section {
-        display: grid;
-        grid-template-columns: auto;
-    grid-template-rows: 1fr 1fr 1fr ;
-    gap: 0 4em;
-    
-    justify-content: center;
-    
-    
-    }
-    .tekst {
-        display: grid;
-        max-height: 615.626px;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
-        align-items: center;
-        justify-content: center;
-        grid-row: 1/4;
-        background-color: var(--color-black);
-        grid-column: 1;
-        
+@media (width > 700px) {
+section {
+    display:grid;
+    grid-template-rows: 1fr 1fr;
+    margin: 0 auto;
+    background-color: var(--color-black);
+}
 
-    }
-    .inside  {
-        max-width: 500px;
+}
+/* section {
+        margin: 0 auto;
+        max-height: 600px;
         display: grid;
-        grid-template-rows: 1fr 1fr 1fr;
+        background-color: var(--color-black);
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 0 4em;
+    } */
+    .tekst {
+        inline-size: min(1000px, 100%);
+        display: grid;
+        margin: 0 auto;
+        grid-template-columns: 1fr 1fr;
+        
+        grid-column: 1;
+
+
+        }
+        .tekst img {
+            grid-template-rows: subgrid;
+            grid-row: 1/4;
+        }
+    
+    .inside  {
+        align-content: center;
+        display: grid;
+
+
     } 
 .card {
     grid-column: 1;
-    grid-row: 3/5;
 }
 .header {
     display: grid;
@@ -76,7 +86,7 @@ background-color:var(--color-black) ;
     --_square-size: var(--square-size, 1rem);
     --_square-half: calc(var(--square-size) / 2);
     --_square-sum: calc(var(--square-count) * var(--square-size));
-    z-index: 1;
+    z-index: -1;
     content: '';
     position: absolute;
     left: -100px;
@@ -91,11 +101,12 @@ background-color:var(--color-black) ;
       rotate: -90deg;
         } 
 
-    }
+    
 .card {
+    margin: 0 auto;
+    inline-size: min(1200px, 100%) ;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    inline-size: 1229px;
     gap: 20px;
 }
 }
