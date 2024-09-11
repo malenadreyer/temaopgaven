@@ -4,7 +4,7 @@ import "../styles/global.css";
 
     <section>
         <div>
-            <div>
+            <div class="div1">
                 <h5 >Proccess</h5>
             <h2>
             Contact Us. It’s Easy.
@@ -52,6 +52,10 @@ import "../styles/global.css";
     font-size: 1rem;
 
    }
+   .div1 {
+    display: grid;
+    
+   }
    h5 {
     background-color: var(--color-gul);
     border-radius: 20px;
@@ -96,31 +100,34 @@ import "../styles/global.css";
     inline-size: min(1200px, 100%);
     margin: 0 auto;
     height: 800px;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: auto 1fr; 
     gap: 4.3125rem;
 
     
    }
 .billedediv {
     display: grid;
-    grid-template-columns: 1fr auto;
-    grid-template-rows: 1fr auto;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     gap: 1rem;
     position: relative;
-   inline-size: min(600px, 100%);
+    inline-size: min(900px, 100%);
     
     &::before{
     --square-count: 12;
     --square-size: 1rem;
     
-    --_square-size: var(--square-size, 1rem);
+    --_square-size: var(--square-size, .7rem);
     --_square-half: calc(var(--square-size) / 2);
     --_square-sum: calc(var(--square-count) * var(--square-size));
     z-index: -2;
     content: '';
     position: absolute;
-    left: 27rem;
-    top: 9.5rem;
+    left: 27rem; /* Brug clamp() for at justere left dynamisk */
+    top: 9rem; /* Brug clamp() for top */
+    
+    /* Responsiv størrelse */
+    inline-size: clamp(10rem, 20vw, 20rem);
     transform-origin: 0 0;
     inline-size: calc( round( var(--_square-sum), var(--_square-size) ) - var(--_square-half) );
     aspect-ratio: .7;
@@ -129,6 +136,8 @@ import "../styles/global.css";
       var(--square-pattern) 0 0 / var(--_square-size) var(--_square-size),
       var(--square-pattern) var(--_square-half) var(--_square-half) / var(--_square-size) var(--_square-size);
     rotate: -90deg;
+
+
   }
 
     &::after {
@@ -165,6 +174,60 @@ import "../styles/global.css";
         grid-row: 1/-1;
     }
 }
-}
 
+@media (width < 1078px) {
+    section {
+    display: grid;
+    align-content: center;
+    inline-size: min(600px, 100%);
+    margin: 0 auto;
+    height: 1300px;
+
+    grid-template-columns: 1fr; 
+    gap: 4.3125rem;
+
+    
+   }
+   .billedediv {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1rem;
+    position: relative;
+
+    &::before{
+    display: none;
+
+  }
+  &::after {
+    display: none;
+
+   }
+    
+}
+   @media (width < 600px) {
+    section {
+    display: grid;
+    margin: 0 auto;
+    height: 1000px;
+    grid-template-columns: 1fr; 
+    gap: 4.3125rem;
+    width: fit-content;
+    overflow: hidden;
+
+    
+   }
+.billedediv {
+    overflow: hidden;
+    &::before{
+    display: none;
+
+  }
+  &::after {
+    display: none;
+
+   }
+}
+   }
+}}
 </style>

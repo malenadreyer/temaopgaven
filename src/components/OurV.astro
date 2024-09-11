@@ -1,0 +1,194 @@
+---
+import "../styles/global.css";
+---
+<section>
+    <div class="section1">
+        <div>
+            <div><h5>
+            OUR VISION
+            </h5>
+            <h2>
+                Turn your ideas into reality.
+            </h2>
+            <p>Capitalize on low hanging fruit to identify a ballpark value added activity beta test. Override the digital divide with additional from DevOps.</p>
+            
+        </div>
+        <ul class="checkmark">
+    <li class="checkmark2">
+        <img src="../assets/tick.svg" alt="tick">
+    Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day.
+    <li class="checkmark2">
+        <img src="../assets/tick.svg" alt="tick">Capitalize on low hanging fruit to identify a ballpark value added activity to beta test override the digital.
+    </ul>
+</div>
+<div class="grid1">
+    <img src="../assets/about1.jpg" alt="">
+</div>
+</div>
+<div class="tal">
+    <div >
+        <h3>1128+</h3>
+       <p>Successful Work</p>
+    </div>
+    <div>
+        <h3>908+</h3>
+       <p>Team member</p>
+    </div>
+    <div>
+        <h3>258+</h3>
+       <p>Happy Customers</p>
+    </div>
+    <div>
+        <h3>564+</h3>
+       <p>Creative Idea</p>
+    </div>
+</div>
+</section>
+
+
+<style>
+  @layer components {
+h3 {
+    color: var(--color-black);
+    font-size: 2.5rem;
+font-weight: 700;
+}
+p {
+    font-family: "Cabin";
+}
+
+section {
+    height: 700px;
+    gap: 50px;
+    display: grid;grid-row: 1fr 1fr;
+    align-content: center;
+}
+.tal {
+    display: grid;
+    margin: 0 auto;
+    
+    text-align: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    inline-size: min(900px, 100%);
+}
+    
+    h5 {
+    background-color: var(--color-green);
+    border-radius: 20px;
+    font-weight: normal;
+    padding: 0px 12px;
+    width: fit-content;
+}   
+
+        h2, p, li {
+            color: var(--color-black);
+        }
+
+    .section1 {
+        align-items: center;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin: 0 auto;
+    inline-size: min(1200px, 100%);
+
+     .grid1 {
+        justify-self: end;
+        position: relative;
+
+
+        &::before {
+    content: '';
+    position: absolute;
+    right: -1rem;
+    top: -1rem;
+    border-radius: 20px;
+    background: green;
+    width: 150px;
+    height: 100px;
+    z-index: -1;
+  }
+        &::after {
+    --square-count: 12;
+    --square-size: 1rem;
+    
+    --_square-size: var(--square-size, 1rem);
+    --_square-half: calc(var(--square-size) / 2);
+    --_square-sum: calc(var(--square-count) * var(--square-size));
+    z-index: -2;
+    content: '';
+    position: absolute;
+    right: 1rem;
+    top: 9rem;
+    transform-origin: 0 0;
+    inline-size: calc( round( var(--_square-sum), var(--_square-size) ) - var(--_square-half) );
+    aspect-ratio: .7;
+    background: linear-gradient(135deg, #BE965D, #976F40, #C99B61, #F0BE7B , #FFCB85, #EEBC79, #C0935B, #976F40) 0 0 / 100% 100%;
+    mask:
+      var(--square-pattern) 0 0 / var(--_square-size) var(--_square-size),
+      var(--square-pattern) var(--_square-half) var(--_square-half) / var(--_square-size) var(--_square-size);
+    /*clip-path: polygon(-3% 0%, 100% 0%, 100% 103%);*/
+    rotate: -90deg;
+  }
+     }
+    }
+    li {
+  position: relative;
+  display: grid;
+  grid: auto / repeat(2, auto);
+  
+  display: inline-flex;
+  justify-content: start;
+  grid-gap: 10px;
+  color: var(--color-brown);
+}
+
+@media (width < 800px) {
+    section {
+    height: 900px;
+    gap: 50px;
+    display: grid;
+    grid-row: 1fr 1fr;
+    align-content: center;
+  
+}
+.section1 {
+        align-items: center;
+        display: grid;
+        grid-template-columns:  1fr;
+        gap: 50px;
+        margin: 0 auto;
+    inline-size: min(500px, 100%);
+
+
+}
+@media (width < 500px) {
+
+    section {
+    height: 1000px;
+
+  
+}
+    .section1{
+      display: grid;
+
+      > * {
+        margin: 0 auto;
+        inline-size: min(300px, 100%);
+      }
+      .grid1 img{
+        inline-size: min(300px, 100%);
+        margin: 0 auto;
+      }
+    }
+    .tal {
+        display: grid;
+    margin: 0 auto;
+    text-align: center;
+    grid-template-columns: 1fr 1fr ;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+    inline-size: min(900px, 100%);
+    }
+    }
+  }
+</style>

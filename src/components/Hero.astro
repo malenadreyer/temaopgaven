@@ -1,8 +1,75 @@
 ---
 import "../styles/global.css";
+export interface Props {
+  tag: string;
+  headline: string;
+  imageSrc: string;
+}
+
+const { tag, headline, imageSrc } = Astro.props;
 ---
 <header>
-
+    <div  class="hero full" >
+        <img src={imageSrc} alt="">
+        <div class="content">
+          <div class="content-background">
+              <div class="tag">
+                  <h5>{tag}</h5>
+              </div>
+              <h1>{headline}</h1>
+          </div>
+        </div>
+      </div>
 </header>
 
-<style></style>
+<style>
+@layer components {
+   h1 {
+    color: black;
+   }
+
+    .hero {
+        display: grid; 
+        grid-template-rows: 1fr ; 
+        grid-template-columns: minmax(100, 1fr) 1fr minmax(0, 50%);
+        position: relative; 
+        
+    
+     img {
+        width: 100%; 
+        height: 100%; 
+        object-fit: cover; 
+        grid-row: 1 / -1; 
+        grid-column: 1 / 5; 
+    }
+
+    .tag h5 {
+    background-color: var(--color-gul);
+    border-radius: 20px;
+    font-weight: normal;
+    color: black;
+    padding: 0rem 0.9375rem;
+    width: fit-content;
+}
+
+    .content {
+        width: 800px;
+        display: grid;
+        align-items: center; 
+        justify-items: center; 
+        grid-row: 1 / -1; /* Sikrer, at content fylder samme række som billedet */
+        grid-column:2 / 3; /* Sikrer, at content fylder samme kolonner som billedet */
+        z-index: 1; /* Sørger for, at indholdet er oven på billedet */
+    }
+
+    .content-background {
+        background: rgba(255, 255, 255, 0.85);
+backdrop-filter: blur(5.5px);
+        padding: 3rem 3.75rem 3.625rem 3.75rem;
+        border-radius: 1.8125rem;
+    }
+
+
+} 
+}
+</style>

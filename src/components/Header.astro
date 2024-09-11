@@ -2,28 +2,32 @@
 import "../styles/global.css";
 import CardWButton from "./CardWButton.astro";
 ---
-<section>
-    <div class="tekst">
-        <div class="inside">
-                <h1>Adam Buschemia Business Consultant</h1>
-                <p> Get help from Alex Moore, a professional business coach with advanced experience on growth and business scaling.</p>
-                <button class="knappen">Book a Meeting</button>
-        </div>
-    <div><img src="/assets/photo.png" alt="">
+<section class="hero-grid">
+    <div class="hero-content">
+      <article class="herotext">
+        <h1>Adam Buschemia Business Consultant</h1>
+        <p>Get help from Alex Moore, a professional business coach with advanced experience on growth and business scaling.</p>
+        <button class="cta-button">Book a Meeting</button>
+      </article>
     </div>
-</div>
-    <div class="card">
+    <div class="hero-image">
+      <img alt="picture of sarah" src="/assets/photo.png" />
+    </div>
+</section>
+
+
+    <div class="cards">
             <CardWButton overskrift="Finance & Restructuring" underskrift="Get help from Alex Moore, a professional business coach with advanced experience on growth and business scaling." knap="Our Services" />
             <CardWButton overskrift="Our Approach" underskrift="Get help from Alex Moore, a professional business coach with advanced experience on growth and business scaling." knap="More About "/>
             <CardWButton overskrift="Consultalk Result" underskrift="Get help from Alex Moore, a professional business coach with advanced experience on growth and business scaling." knap="Explore Our Solution"/>
     </div>
-</section>
+
 
 <style>
 @layer components {
 
 
-.knappen {
+.cta-button{
     border-radius: 3rem;
     background-color: white;
     padding: 16px 31px; 
@@ -31,51 +35,61 @@ import CardWButton from "./CardWButton.astro";
     justify-content: start;
 
 }
-@media (width > 700px) {
-section {
-    display:grid;
-    grid-template-rows: 1fr 1fr;
+.herotext {
     margin: 0 auto;
-    background-color: var(--color-black);
+    inline-size: min(500px, 100%);
 }
-
+.hero-grid {
+  background-color: var(--color-black);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;  
+  gap: 2rem;
+  width: 100%;
+  margin: 0 auto;
 }
-/* section {
-        margin: 0 auto;
-        max-height: 600px;
-        display: grid;
-        background-color: var(--color-black);
-    grid-template-rows: 1fr 1fr 1fr;
-    gap: 0 4em;
-    } */
-    .tekst {
-        inline-size: min(1000px, 100%);
-        display: grid;
-        margin: 0 auto;
-        grid-template-columns: 1fr 1fr;
-        
-        grid-column: 1;
-
-
-        }
-        .tekst img {
-            grid-template-rows: subgrid;
-            grid-row: 1/4;
-        }
+.hero-content {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  display: flex;
+  
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+}
+ 
+.hero-image {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+ 
+.hero-image img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
     
-    .inside  {
-        align-content: center;
-        display: grid;
-
-
-    } 
-.card {
-    grid-column: 1;
-}
-.header {
+.cards {
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-}
+    margin: 0 auto;
+    inline-size: min(1200px, 100%);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    justify-content: center;
+    justify-items: center;
+    margin-top: -130px;
+    z-index: 2;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
 
 background-color:var(--color-black) ;
 
@@ -101,15 +115,27 @@ background-color:var(--color-black) ;
       rotate: -90deg;
         } 
 
-    
-.card {
+@media (width < 700px) {
+    .hero-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows:  auto auto auto;
+  }
+ 
+  .hero-image {
+    grid-column: 1;
+    height: 50vh;
+  }
+ 
+  .cards {
+    grid-column: 1;
+    grid-row: 3;
     margin: 0 auto;
-    inline-size: min(1200px, 100%) ;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 20px;
+    inline-size: min(400px, 100%);
+    grid-template-columns: 1fr;
+    margin-top: 0;
+    align-self: center;
+  }
 }
 }
-
 
 </style>

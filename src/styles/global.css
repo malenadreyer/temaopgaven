@@ -28,7 +28,11 @@
     list-style: none;
   }
   img {
-    width: 100%;
+    width: auto;
+  }
+
+  body {
+    overflow-x: hidden;
   }
 h1 {
     color: var(--color-white);
@@ -48,6 +52,7 @@ h2 {
 h3 {
     color: var(--color-white);
     font-size: var(--fluid-h3);
+    font-family: "cabin";
     font-weight: 600;
 }
 h5 {

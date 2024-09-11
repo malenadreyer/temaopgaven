@@ -7,10 +7,11 @@ import "../styles/global.css";
     <section class="full">
 
       <header>
+        <div>
         <img src="../assets/icon2.svg" alt="">
         <h2>Financial Projections</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-
+      </div>
         <div class="scroll-buttons">
             <button>&#8592;</button>
             <button>&#8594;</button>
@@ -173,5 +174,22 @@ header {
 
 </style>
 
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const container = document.querySelector('.scrolling ul');
+    const leftButton = document.getElementById('scroll-left');
+    const rightButton = document.getElementById('scroll-right');
+    
+    const cardWidth = 400; // Width of each card
+    const scrollAmount = cardWidth + 16; // cardWidth + gap between cards
+    
+    leftButton.addEventListener('click', () => {
+      container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    });
 
+    rightButton.addEventListener('click', () => {
+      container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    });
+  });
+</script>
   
