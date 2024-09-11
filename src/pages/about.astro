@@ -1,11 +1,19 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/Hero.astro";
+import CoreValues from "../components/CoreValues.astro";
 import OurV from "../components/OurV.astro";
+import According from "../components/According.astro"
 ---
 <BaseLayout title ="About">
+    <Hero/ imageSrc="/assets/about.png" tag="SERVICES" headline="Creative Services For Boost Your Business Growth"></Hero>
     <OurV/>
-     <Hero/ imageSrc="/assets/about.png" tag="SERVICES" headline="Creative Services For Boost Your Business Growth">
+<CoreValues/
+bgColor="var(--color-grey)" 
+   textColor="var(--color-black)"
+   knapColor="var(--color-black)"
+   knapSkrift="var(--color-white)">
+<According/>
     
      
 </BaseLayout>
