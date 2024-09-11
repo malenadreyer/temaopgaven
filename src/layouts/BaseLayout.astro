@@ -2,12 +2,9 @@
 const {title =""} = Astro.props;
 import "../styles/global.css";
 import Nav from "../components/Nav.astro";
-import Header from "../components/Header.astro"
-import Wte from "../components/Wte.astro";
-import Scrollingcontainer from "../components/Scrollingcontainer.astro";
 import Footer from "../components/Footer.astro";
-import Animation from "../components/Animation.astro";
 import Newsletter from "../components/Newsletter.astro";
+
 ---
 
 
@@ -31,10 +28,7 @@ import Newsletter from "../components/Newsletter.astro";
 		
         <header><Nav/></header>
 		<main>
-			<Header/>
-			<Wte/>
-           <Scrollingcontainer/>
-		   <Animation/>
+<slot/>
 			<Newsletter/>
         </main>
         <footer><Footer/></footer>

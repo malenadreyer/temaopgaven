@@ -1,0 +1,55 @@
+---
+import "../styles/global.css";
+export interface Props {
+  imageSrc: string;
+  overskrift: string;
+  underskrift: string;
+}
+const {overskrift, underskrift, imageSrc} = Astro.props
+---
+
+<section>
+    <div>
+        <img src={imageSrc} alt="icon">
+        <h6>{overskrift}</h6>
+        <p>{underskrift}</p>
+        <div> <a href="/">Read More &#8594;</a>
+        </div>
+    </div>
+</section>
+
+<style>
+@layer components{
+
+    h6, p, a {
+        color: var(--color-black);
+       
+    }
+    a {
+        font-size: 1.125rem;
+        font-family: "Lato";
+        font-weight: 600;
+    }
+    img {
+    width: auto;
+    }
+div {
+    display: grid;
+    width: auto;
+    text-align: left;
+    padding: 2rem 1.44rem;
+    grid-template-rows: auto;
+    gap: 1rem;
+    border-radius: 1.25rem;
+    container-name:diver;
+    background-color: var(--color-white);
+    
+}
+@container diver (width > 700px) {
+    div {
+        
+    }
+}
+}
+
+</style>

@@ -10,10 +10,10 @@ import "../styles/global.css";
           <div class="menuknap"><input type="checkbox" id="menu-toggle">
           <label for="menu-toggle" class="menu-icon">&#9776;</label>
           <ul class="menu">
-            <li><a href="#">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="#">Case Study</a></li>
             <li><a href="#">Team</a></li>
-            <li><a href="#">About</a></li>
+            <li><a href="about">About</a></li>
           </ul>
         </div>
           <div class="knap">
@@ -34,10 +34,12 @@ import "../styles/global.css";
 
 
 <style>
-  
+
 [popover] {
   opacity: 0;
   translate: 0 -200%;
+
+
 }
 :popover-open {
   @starting-style {
@@ -47,11 +49,8 @@ import "../styles/global.css";
   opacity: 1;
   translate: 0 0;
 
-  :backdrop {
-  background: #0004;
-  backdrop-filter: blur(4px);
 }
-}
+
 
 #popup {
   display: flex;

@@ -1,0 +1,106 @@
+---
+import "../styles/global.css";
+import Card from "./Card.astro";
+const {bgColor, textColor, knapColor, knapSkrift} = Astro.props;
+---
+<main style={`background-color: ${bgColor}`}; >
+<section>
+<div class="grid11" style={`color: ${textColor}`}>
+    <h5 >Growing with our Clients</h5>
+    <h2>
+    Our core values & principles
+    </h2>
+    <p>Capitalize on low hanging fruit to identify a ballpark value added activity beta test. Override the digital divide with additional from DevOps.</p>
+        <button style={`background-color: ${knapColor}; color: ${knapSkrift};`} >Get in touch</button>
+    
+</div>
+<div class="list">
+    <ul>
+ <li><Card imageSrc="/assets/ci.svg" overskrift="FCreative Ideas" underskrift="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget accumsan augue Donec aliquam."></li>
+ <li><Card imageSrc="/assets/bf.svg" overskrift="Best Features" underskrift="Lorem ipsum dolor sit amet, consectetur adipiscing elit."/></li>
+ <li><Card imageSrc="/assets/earth.svg" overskrift="Experience" underskrift="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget accumsan augue Donec aliquam."/></li>
+ <li><Card imageSrc="/assets/es.svg"  overskrift="Easy Solutions" underskrift="Lorem ipsum dolor sit amet, consectetur adipiscing elit."/></li>
+    </ul>
+</div>
+</section>
+</main>
+<style>
+
+
+@layer components {
+
+    section {
+        display: grid;
+        grid-template-rows: auto auto;
+        gap: 2.125rem;;
+        align-content: center;
+        inline-size: min(1200px, 100%);
+        height: 700px;
+        margin: 0 auto;
+    }
+    .grid11 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        > * {
+            grid-template-columns: subgrid;
+            grid-column: 1;
+        }
+        :last-child {
+            grid-column: 2;
+            justify-self: end;
+        }
+    }
+
+    button {
+        padding: 0.9375rem 2.125rem;
+        border-radius: 2.625rem;
+    }
+    ul {
+    margin: 0 auto;
+    inline-size: min(1200px, 100%) ;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+}
+h5 {
+
+background-color: var(--color-gul);
+    border-radius: 20px;
+    font-weight: normal;
+    padding: 0px 12px;
+    color: black;
+    width: fit-content;
+}
+
+@media (width < 800px) {
+    section {
+        display: grid;
+        grid-template-rows: auto auto;
+        gap: 2.125rem;;
+        align-content: center;
+        inline-size: min(450px, 100%);
+        height: 1200px;
+        margin: 0 auto;
+    }
+   
+    .grid11 {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr minmax(1200,0) 1fr;
+
+        :last-child {
+            grid-template-columns: subgrid;
+            grid-column: 1;
+            
+        }
+    }
+    ul {
+        display: grid;
+        inline-size: min(450px, 100%) ;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+}
+}
+</style>

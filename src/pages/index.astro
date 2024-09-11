@@ -1,10 +1,25 @@
 ---
 
 import BaseLayout from "../layouts/BaseLayout.astro";
-
-
+import Header from "../components/Header.astro"
+import Wte from "../components/Wte.astro";
+import Scrollingcontainer from "../components/Scrollingcontainer.astro";
+import Animation from "../components/Animation.astro";
+import CoreValues from "../components/CoreValues.astro";
+import ContactFr from "../components/ContactFr.astro";
 ---
 
 
 
-<BaseLayout title ="Home"></BaseLayout>
+<BaseLayout title ="Home">
+    <Header/>
+    <Wte/>
+   <Scrollingcontainer/>
+   <Animation/>
+   <CoreValues 
+   bgColor="var(--color-black)" 
+   textColor="var(--color-white)"
+   knapColor="var(--color-white)"
+   knapSkrift="var(--color-black)"/>
+<ContactFr/>
+</BaseLayout>
