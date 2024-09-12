@@ -1,7 +1,14 @@
 ---
+import EmployeeCard from "./EmployeeCard.astro"
+const { data } = Astro.props;
 
 ---
 
+<div>
+  <ul role="list">
+    {data.map((employee) => <EmployeeCard {employee} />)}
+  </ul>
+</div>
 
 
 <!-- hvis jeg gerne vil hente en section 2 gange, men skal skifte bagrund, henter jeg den som jeg ville og

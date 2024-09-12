@@ -24,13 +24,15 @@ import "../styles/global.css";
 .newsletter {
     display: grid;
     justify-items: center;
-    margin-bottom: 100px;
+    height: 400px;
+    align-items: center;
     
 }
 .baggrund {
  
-  inline-size: min(1000px, 100% - 1rem);
+  inline-size: min(1200px, 100% - 1rem);
   block-size: 150px;
+  margin: 0 auto;
   border-radius: 10px;
   background: #181818;
   overflow: clip;
@@ -93,14 +95,6 @@ import "../styles/global.css";
    
 }
 
-@media (width < 700px) {
-        .tekst {
-        display: grid;
-        grid-template-columns: 1fr;
-        text-align: center;
-        
-        }
-    }
 .seach {
     display: grid;
     grid-template-columns: auto auto;
@@ -127,5 +121,29 @@ border: none;
 z-index: 1;
 padding: clamp(0rem, 0.5vw + 0.5rem, 0.5rem) clamp(1rem, 1vw + 0.5rem, 2.0625rem); ;
 
+
 }
+
+@media (width < 700px) {
+  .seach {
+    display: grid;
+
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+  .baggrund {
+    inline-size: min(400px, 100% - 1rem);
+  margin: 0 auto;
+  }
+   .tekst {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    text-align: center;
+        
+      }
+    }
+  }
+
 </style>

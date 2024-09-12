@@ -7,6 +7,16 @@ import Scrollingcontainer from "../components/Scrollingcontainer.astro";
 import Animation from "../components/Animation.astro";
 import CoreValues from "../components/CoreValues.astro";
 import ContactFr from "../components/ContactFr.astro";
+
+const employeeData = await fetch(
+  "https://raw.githubusercontent.com/daviatkea/frontend-design/main/resources/json/employees.json"
+).then((res) => res.json());
+
+const coreValuesData = await fetch(
+  "https://raw.githubusercontent.com/daviatkea/frontend-design/main/resources/json/corevalues.json"
+).then((res) => res.json());
+
+const firstThreeEmployees = employeeData.slice(0, 3);
 ---
 
 
