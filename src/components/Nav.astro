@@ -35,6 +35,8 @@ import "../styles/global.css";
 
 <style>
 
+@layer {
+  @layer reset, global, components, overrides;
 [popover]::backdrop {
     background: #0004;
     backdrop-filter: blur(16px);
@@ -217,7 +219,7 @@ justify-self: start;
 align-self: center;
 }
 }
-
+}
 
 
 
