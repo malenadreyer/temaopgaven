@@ -42,7 +42,7 @@
       
   
 h1 {
-    
+    color:var(--color-white);
     font-family: "Lato";
     font-size: var(--fluid-h1);
     font-weight: 600;
@@ -58,7 +58,7 @@ h2 {
     font-weight: 700;
 }
 h3 {
-    
+    color: var(--color-white);
     font-size: var(--fluid-h3);
     font-family: "cabin";
     margin-bottom: 1rlh;
@@ -78,7 +78,7 @@ h6 {
     font-size: 1.25rem;
 }
 p, li {
-    
+    color: var(--color-white);
     font-family: "Lato";
     line-height: 147.5%;
 
