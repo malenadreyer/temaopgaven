@@ -1,26 +1,42 @@
 ---
 import EmployeeCard from "./EmployeeCard.astro"
-const { data } = Astro.props;
+
 
 ---
-
+<div class="mot">
+  <h2>Meet Our Great Team</h2>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. enim ad minim veniam, quis nostrud exercitation.</p>
+  <button>Join our team</button>
+</div>
 <div>
-  <ul role="list">
-    {data.map((employee) => <EmployeeCard {employee} />)}
+  <ul class="list">
+     <li><EmployeeCard/ imageSrc="/assets/sarah1.png" tag="CEO at Company" name="Sarah Jasmine"></EmployeeCard></li>
+     <li><EmployeeCard/ imageSrc="/assets/john.jpg" tag="Manager" name="Sarah Jasmine"></EmployeeCard></li>
+     <li><EmployeeCard/ imageSrc="/assets/daisy.jpg" tag="CEO at Company" name="Sarah Jasmine"></EmployeeCard></li>
+     <li><EmployeeCard/ imageSrc="/assets/maya.jpg" tag="CEO at Company" name="Sarah Jasmine"></EmployeeCard></li>
+     <li><EmployeeCard/ imageSrc="/assets/ryan.png" tag="CEO at Company" name="Sarah Jasmine"></EmployeeCard></li>
+     <li><EmployeeCard/ imageSrc="/assets/lilly.jpg" tag="CEO at Company" name="Sarah Jasmine"></EmployeeCard></li>
   </ul>
 </div>
 
+<style>
+  @layer components {
 
-<!-- hvis jeg gerne vil hente en section 2 gange, men skal skifte bagrund, henter jeg den som jeg ville og
-skrive theme="dark" og theme "light", dette skal du
- bruge til corevalues. Vi laver en const {data, theme ="light" } =Astro.props
- Så skriver vi <section data-theme={theme}
-  [data-theme ="dark"] {
-  --color-white f.eks her. 
-  Lav en masse variabler her, så du kan ændre farverne.  
-
-  For kun at bruge 3 styks, skrive = employeeData.slice(0, 3);
-
-
+    h
+    .list {
+      inline-size: min(1200px, 100%);
+      margin: 0 auto;
+      
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+    }
+li {
+  padding-bottom: 5rem;
 }
-  -->
+.mot {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+  }
+</style>

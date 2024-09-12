@@ -2,10 +2,11 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/Hero.astro";
 import Employee from "../components/Employee.astro"
-const employeeData = await fetch("https://raw.githubusercontent.com/malenadreyer/frontend-design/main/resources/json/employees.json").then((res) => res.json());
 
 ---
 <BaseLayout title ="Team">
+    
+    
     <Hero/imageSrc="/assets/team.png" tag="TEAM" headline="The Consultors">
 </Hero>
 <Employee/>
