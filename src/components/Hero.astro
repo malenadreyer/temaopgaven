@@ -26,16 +26,19 @@ const { tag, headline, imageSrc } = Astro.props;
 @layer components {
    h1 {
     color: black;
+    
    }
 
     .hero {
-        display: grid; 
+        display: grid;
+        overflow-x: hidden; 
         grid-template-rows: 1fr ; 
         grid-template-columns: minmax(100, 1fr) 1fr minmax(0, 50%);
         position: relative; 
         
     
      img {
+        overflow-x: hidden;
         width: 100%; 
         height: 100%; 
         object-fit: cover; 
@@ -44,6 +47,7 @@ const { tag, headline, imageSrc } = Astro.props;
     }
 
     .tag h5 {
+        overflow-x: hidden;
     background-color: var(--color-gul);
     border-radius: 20px;
     font-weight: normal;
@@ -53,19 +57,20 @@ const { tag, headline, imageSrc } = Astro.props;
 }
 
     .content {
-        width: 800px;
+        overflow-x: hidden;
+        width: 80vw; 
         display: grid;
         align-items: center; 
         justify-items: center; 
-        grid-row: 1 / -1; /* Sikrer, at content fylder samme række som billedet */
-        grid-column:2 / 3; /* Sikrer, at content fylder samme kolonner som billedet */
-        z-index: 1; /* Sørger for, at indholdet er oven på billedet */
+        grid-row: 1 / -1; 
+        grid-column:2 / 3; 
     }
 
     .content-background {
+        overflow-x: hidden;
         background: rgba(255, 255, 255, 0.85);
-backdrop-filter: blur(5.5px);
-        padding: 3rem 3.75rem 3.625rem 3.75rem;
+        backdrop-filter: blur(5.5px);
+        padding: 6vh 5vw 7.5vh 4vw;
         border-radius: 1.8125rem;
     }
 

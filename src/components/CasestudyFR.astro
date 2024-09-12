@@ -1,0 +1,130 @@
+<div class="container">
+    <section class="case-box">
+        <div class="case-details">
+            <div class="case-info">
+                <div class="case-column">
+                    <h3 class="case-title">Case Name</h3>
+                    <p>Taxes & Efficiency</p>
+                </div>
+                <div class="case-column">
+                    <h3 class="case-title">Category</h3>
+                    <p>Business</p>
+                </div>
+                <div class="case-column">
+                    <h3 class="case-title">Date</h3>
+                    <p>27th September 2022</p>
+                </div>
+            </div>
+            <div class="case-preview">
+                <a href="#" class="btn-primary">Live Preview</a>
+            </div>
+        </div>
+    </section>
+</div>
+
+<style>
+@layer components {
+
+  .container {
+    height: 700px;
+    align-items: center;
+    align-content: center;
+    inline-size: min(1000px, 100%);
+    margin: 0 auto;
+  }
+
+  .case-box {
+    margin-bottom: 2.5rem;
+    background-image: url("../assets/case.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 28.125rem;
+    border-radius: 1.25rem;
+    padding: 1rem;
+    display: flex;
+    align-items: flex-end; 
+    justify-content: center;
+  }
+
+  .case-details {
+    display: flex;
+    justify-content: space-between;
+    padding: 2.5rem 3.75rem;
+    background: var(--color-black);
+    border-radius: 1.25rem;
+    width: 90%; 
+    max-width: 56.25rem; 
+    margin-bottom: -5.5rem; 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+  }
+
+  .case-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+  }
+
+
+
+  .case-preview {
+    align-self: center;
+  }
+
+  .btn-primary {
+    padding: 0.75rem 1.5rem;
+    background-color: var(--color-gul);
+    border-radius: 1.25rem;
+    transition: background-color 0.5s ease;
+  }
+
+  .btn-primary:hover {
+    background-color: var(--color-white);
+    color:var(--color-gul);
+  }
+  @media (width < 1000px){
+
+    .container {
+    height: 600px;
+    align-items: center;
+    align-content: center;
+    inline-size: min(800px, 100%);
+    margin: 0 auto;
+  }
+  .case-details {
+      flex-direction: column;
+      width: 100%; 
+      height: 150px;
+      padding: 1.25rem;
+      text-align: center;
+    }
+  }
+
+
+  @media  (width < 700px) {
+
+    .container {
+    height: 600px;
+    align-items: center;
+    align-content: center;
+    inline-size: min(460px, 100%);
+    margin: 0 auto;
+  }
+    .case-details {
+      flex-direction: column;
+      width: 100%; 
+      height: 300px;
+      padding: 1.25rem;
+      text-align: center;
+    }
+
+    .case-info {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .case-preview {
+      margin-top: 1.25rem;
+    }
+  }
+}
